@@ -151,10 +151,9 @@ class ClaimLine(models.Model):
     @api.multi
     @api.onchange('customer')
     def get_invoice(self):
-
         res={}  
         for invoice in self.customer.invoice_ids:
-            print invoice
+            #print(invoice)
             self.invoice_number=invoice
             res[invoice]= self.invoice_number
         return res

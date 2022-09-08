@@ -27,5 +27,5 @@ class Reminders(http.Controller):
             value.append(i.date_to)
         # peeps=request.env[value[0]].search([('birthday', '=',value[3])])
         # for i in peeps:
-        #     print i.work_email
+        #     print(i.work_email)
         return value
