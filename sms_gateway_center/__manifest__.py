@@ -16,7 +16,9 @@
     'version': '1.1',
 
     'depends': ['base'],
-
+    'external_dependencies': {
+        'python': ['twilio'],
+    },
     'data': [
         'views/single_sms_history.xml',
         'views/partner_view.xml',

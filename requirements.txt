@@ -1,0 +1,2 @@
+# Twilio is required by sms_gateway_center addon, you may also need to install it on your system, checkout: https://www.twilio.com/docs/twilio-cli/getting-started/install
+twilio
