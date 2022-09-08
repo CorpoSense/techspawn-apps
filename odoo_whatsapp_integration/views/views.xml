@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="whatsapp_demo_sale">
+      <field name="name">custom_whatsapp_module_demo_1</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header/button[@name='action_cancel']" position="after">
+          <button name="action_whatsapp" type="object" class="oe_highlight" string="Send Whatsapp Message"
+          icon="fa-whatsapp"/>
+        </xpath>
+      </field>
+    </record>
+
+        <record model="ir.ui.view" id="whatsapp_demo_inventory_order">
+      <field name="name">custom_whatsapp_module_demo_2</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header/button[@name='action_cancel']" position="after">
+          <button name="action_whatsapp" type="object" class="oe_highlight" string="Send Whatsapp Message"
+          icon="fa-whatsapp" attrs="{'invisible': ['|', ('state', 'in', ('draft','waiting','confirmed','assigned'))]}"/>
+        </xpath>
+      </field>
+    </record>
+
+      <record model="ir.ui.view" id="whatsapp_demo_purchase_order">
+      <field name="name">custom_whatsapp_module_demo_3</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header/button[@name='button_cancel']" position="after">
+          <button name="action_whatsapp" type="object" class="oe_highlight" string="Send Whatsapp Message"
+          icon="fa-whatsapp"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="whatsapp_demo_invoice_order">
+      <field name="name">custom_whatsapp_module_demo_4</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header/button[@name='invoice_print']" position="after">
+          <button name="action_whatsapp" type="object" class="oe_highlight" string="Send Whatsapp Message"
+          icon="fa-whatsapp" attrs="{'invisible': ['|', ('state', 'in', ('draft','cancel','open'))]}"/>
+        </xpath>
+      </field>
+    </record>
+
+
+  </data>
+</odoo>
